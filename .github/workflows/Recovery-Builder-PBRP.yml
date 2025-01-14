@@ -134,6 +134,7 @@ jobs:
     - name: Fixed Missing Fonts
       run: |
         cd android-recovery
+        mkdir -p external/noto-fonts/other
         cd external/noto-fonts/other
         wget https://github.com/cd-Crypton/custom-recovery-extras/raw/main/missing-font.zip
         unzip -o missing-font.zip
