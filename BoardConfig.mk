@@ -115,3 +115,7 @@ TW_MTP_DEVICE := /dev/mtp_usb
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
+
+#PB FLAGS
+PB_TORCH_PATH := "/sys/devices/virtual/camera/flash/rear_flash"
+PB_TORCH_MAX_BRIGHTNESS := 1
