@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2021 The Android Open Source Project
+# Copyright 2016 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,27 +14,14 @@
 # limitations under the License.
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := star2qltechn
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
 
-# Inherit from common AOSP config
-$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
-# Inherit some common TWRP stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/samsung/star2qltechn/device.mk)
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/star2qltechn/recovery/root,recovery/root)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := twrp_star2qltechn
+PRODUCT_NAME := omni_star2qltechn
 PRODUCT_DEVICE := star2qltechn
 PRODUCT_MODEL := SM-G9650
 PRODUCT_BRAND := samsung
